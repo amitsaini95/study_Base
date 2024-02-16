@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12 col-sm-12 ">
+
+  
+<div class="roomdetails Update-room text-white">
+    <div class="room">
+        <div class="room-titleBox" style="display: flex;justify-content: space-between;align-items: center;">
+        <h3>{{rooms.name}}</h3>
+        <span><a href="{% url 'updateroom' rooms.pk %}"><button class="btn btn-success">Edit</button></a></span>
+       </div>
+        <p>{{rooms.description}}</p>
+    <div class="convertion text-white">
+        <h4>conversation</h4>
+        {% for message in message %}
+        
+            <h6>@{{message.user.username}}   {{message.created|timesince}} ago</h6>
+            <p>{{message.body}}</p>
+            <hr>
+        
+        {% endfor %}
+        
+        <form method="post" action="">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button class="btn btn-success my-3" type="submit">Message</button>
+        </form>
+    </div>
+
+    </div>
+    
+</div>
+</div>
+<div class="col-4 col-md-3 col-sm-12">
+    <div class="room_message text-white">
+        <h3>Participants</h3>
+        
+        {% for part in participant %}
+        <div class="roomMessage-title">
+        <h6><a href="{% url 'Profile' part.id %}">@{{part.username}}</a> </h6>
+        
+        
+        </div>
+        {% endfor %}
+
+</div>
+</div>
+{% endblock %}

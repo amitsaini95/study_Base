@@ -1,0 +1,17 @@
+<div class="Topic">
+<h4>Browser Topic</h4>
+<ul>
+    <li>
+        <a href="{% url 'Home' %}">All<span>{{RoomCount.count}}</span></a>
+    </li>
+    {% for topic in Topic %}
+    <li>
+
+        <a href="{% url 'Home' %}?q={{topic.name}}">{{topic.name}}<span>{{topic.roomtopic.count}}</span> </a>
+    </li>
+    {% endfor %}
+     
+</ul>
+
+
+</div>

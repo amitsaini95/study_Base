@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-12  mx-auto">
+        
+        <div class="Update-room">
+            <h4 class="text-white">Create Room</h4>
+    <form action="" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.errors }}
+          {{ field.label_tag }}
+           {{ field }}
+        </div>
+    {% endfor %}
+        <input type="submit" value="create room" class="btn btn-primary ">
+    </form>
+    
+        </div>
+    </div>
+    </div>
+{% endblock %}

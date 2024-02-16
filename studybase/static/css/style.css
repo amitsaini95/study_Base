@@ -1,0 +1,153 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/* *********************header section start *************************/
+
+.headerNavbar{
+    background: #08484b;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    padding:12px 0px 8px 0px;
+
+}
+.headerNavbar .logo h3 a{
+    text-decoration: none;
+    font-size: 28px;
+    font-family: 'Times New Roman', Times, serif;
+    padding:0px;
+    color:#fff;
+    font-weight:500;
+}
+.headerNavbar .searchbox input{
+    font-size: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 1px solid #1a1d1c;
+    border-radius:10px;
+    box-shadow: none;
+
+    padding: 6px 10px;
+}
+
+
+.UserprofileContainer{
+    text-align: end;
+}
+.UserprofileContainer .UserProfile{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.UserprofileContainer .dropdown a{
+    text-decoration: none;
+    color: #ece9e9;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.UserprofileContainer  .dropdown .dropdown-menu  li a .dropdown-item{
+    font-size: 16px;
+    color:#d32a00;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+
+}
+.UserprofileContainer .login-container .btn-login{
+    padding: 5px 20px;
+    background: #f32171;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+
+}
+/*  *********************** rooom section start*************************/
+.mainContainer{
+    padding-top:6rem !important;
+    background: #032535;
+    height:100vh;
+    
+    padding-bottom: 2rem;
+}
+
+.Topic h4{
+    color:#ece9e9;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+   
+
+}
+.Topic ul li{
+    list-style-type: none;
+  
+}
+.Topic ul{
+    padding-left: 0px;
+}
+.Topic ul li a{
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    font-size: 18px;
+    padding: 6px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+.mainContainer .roombox{
+    background: #325045;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.mainContainer .roombox p{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-bottom: 2px;
+
+}
+.mainContainer .roombox a{
+    font-size: 17px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 3px 0px;
+}
+ .fieldWrapper input,select,textarea {
+    margin: 6px 0px !important;
+ }
+ .fieldWrapper label{
+    font-size: 16px;
+    color: rgb(255, 254, 254) !important;
+
+}
+
+@media screen and (max-width:768px) {
+    .mainContainer{
+        background: #08484b !important;
+        height: 100%;
+        padding-top: 1rem !important;
+        
+    }
+    
+    .headerNavbar{
+        position: relative;
+    }
+}
+
+@media screen and (max-width:574px) {
+    .headerNavbar .navbar-nav{
+        flex-direction: unset;
+    }
+   
+    
+   
+    .headerNavbar .navbar-nav  .dropdown-menu {
+        position:absolute !important;
+    }
+    
+}

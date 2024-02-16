@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="Update-room">
+<form action="" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="fieldWrapper">
+        {{ field.errors }}
+      <label for=""> {{ field.label_tag }}</label>
+       {{ field }}
+    </div>
+{% endfor %}
+    <input type="submit" value="Edit" class="btn btn-primary mt-3">
+</form>
+</div>
+{% endblock %}

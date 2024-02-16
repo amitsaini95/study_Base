@@ -1,0 +1,8 @@
+
+<div class="activity">
+    <h4>Recent activity</h4>
+    {% for message in room_message %}
+    <small>@{{message.user}}   {{message.created|timesince}} ago</small>
+    <small>replied to "{{message.room}}"</small>
+    {% endfor %}
+</div>
