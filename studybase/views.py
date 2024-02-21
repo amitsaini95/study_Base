@@ -4,7 +4,12 @@ from django.contrib.auth import login,authenticate,logout
 from django.db.models import Q
 from studybase.forms import LoginForm, MessageForm, ProfileForm, RegisterForm, RoomForm
 from .models import *
+from django.http import JsonResponse
 from django.core.paginator import Paginator
+import json
+from django.core import serializers
+
+
 # Create your views here.
 def HomeView(request):
     q=request.GET.get('q')  if request.GET.get('q') != None else ''
@@ -115,10 +120,17 @@ def ProfileView(request):
         form=ProfileForm(instance=request.user)
     return render(request,"profile.html",{'form':form})
 def topicView(request):
+
     topic=Topic.objects.all()
+
     context={
         'Topic':topic
     }
     return render(request,"Topic_Component.html",context)
+
+def createajax(request):
+    data = list(Room.objects.values())
+    return JsonResponse(data,safe=False)
+    # return HttpResponse(qs_json, content_type='application/json')
 
 

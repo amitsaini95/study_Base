@@ -21,6 +21,7 @@ from django.conf.urls.static import static
     # ... the rest of your URLconf goes here ...
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('studybase.urls'))
+    path('',include('studybase.urls')),
+    path('api',include('studybase.apiurls'))
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

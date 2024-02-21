@@ -71,6 +71,7 @@
         <div class="row">
             <div class="col-12">
                 {% block content %}
+                
                 {% endblock %}
             </div>
         </div>
@@ -79,6 +80,31 @@
 </body>
 
 
-   
+<script
+src="https://code.jquery.com/jquery-3.7.1.js"
+integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function(){
+    var RoomContainer=document.getElementById("RoomContainer")
+    $('.ajax').click(function(){
+      $.ajax({
+        url: "{% url 'Ajaxdata' %}",
+        success: function (data) {
+         
+            for(let i=0;i<data.length;i++){
+              console.log(data[i])
+              
+              
+      
+              $('#RoomContainer').append(`<div class="col-4"><h4>${data[i].id}</h4><h6>${data[i].name}</h6><p>${data[i].topic_id}</p></div>`)
+            }
+          
+        }
+      });
+    })
+
+  })
+</script>
 
 </html>

@@ -9,5 +9,6 @@ urlpatterns=[
     path('logout',views.LogoutView,name="Logout"),
     path('register',views.RegisterView,name="Register"),
     path('profile',views.ProfileView,name="Profile"),
-    path('topic',views.topicView,name="Topic")
+    path('topic',views.topicView,name="Topic"),
+    path('createajax',views.createajax,name="Ajaxdata")
 ]
